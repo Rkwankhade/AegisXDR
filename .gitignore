@@ -1,0 +1,27 @@
+# Python
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.pyc
+backend/.env
+backend/data/
+backend/aegisxdr.db
+
+# Node
+frontend/node_modules/
+frontend/build/
+
+# Logs
+logs/
+*.log
+*.pid
+
+# Keys & secrets (NEVER commit these)
+data/
+*.key
+*.pem
+*.crt
+
+# OS
+.DS_Store
+Thumbs.db

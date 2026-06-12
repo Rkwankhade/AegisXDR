@@ -1,0 +1,30 @@
+{
+  "name": "aegisxdr-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.0",
+    "react-scripts": "5.0.1",
+    "axios": "^1.7.2",
+    "recharts": "^2.12.7",
+    "lucide-react": "^0.383.0",
+    "date-fns": "^3.6.0",
+    "react-toastify": "^10.0.5",
+    "zustand": "^4.5.2",
+    "@codemirror/lang-javascript": "^6.2.2",
+    "@uiw/react-codemirror": "^4.23.0",
+    "@codemirror/theme-one-dark": "^6.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
+  },
+  "proxy": "http://localhost:8000",
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version"]
+  }
+}
