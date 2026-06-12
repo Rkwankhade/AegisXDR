@@ -40,3 +40,5 @@ scikit-learn==1.4.2
 joblib==1.4.2
 blake3==0.4.1
 cffi==1.16.0
+qrcode[pil]==7.4.2
+pillow==10.3.0
