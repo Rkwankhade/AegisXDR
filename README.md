@@ -40,6 +40,7 @@ uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 # Frontend (new terminal)
 cd frontend && npm install --legacy-peer-deps && npm start
 ```
+Website url -https://6a2be824d727989fe6c7bfd6--aegisxdr.netlify.app
 
 Open http://localhost:3000 — Login: `admin` / `AegisXDR@2024!`
 
