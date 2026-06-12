@@ -13,3 +13,6 @@ logs/
 *.pem
 *.crt
 data/
+
+# Local Netlify folder
+.netlify
