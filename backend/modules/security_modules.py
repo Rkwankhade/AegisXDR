@@ -388,6 +388,26 @@ class ThreatIntelEngine:
 # ═══════════════════════════════════════════════════════════════
 
 class PasswordSecurityLab:
+    def _compute_score(self, password, entropy_bits, detected_patterns):
+        import re as r
+        s = 0; n = len(password)
+        if n>=20: s+=35
+        elif n>=16: s+=30
+        elif n>=12: s+=22
+        elif n>=10: s+=15
+        elif n>=8: s+=8
+        div = sum([bool(r.search("[a-z]",password)),bool(r.search("[A-Z]",password)),
+            bool(r.search(r"\d",password)),bool(r.search("[^a-zA-Z0-9]",password))])
+        s += {1:5,2:12,3:22,4:30}.get(div,0)
+        if entropy_bits>=80: s+=25
+        elif entropy_bits>=60: s+=18
+        elif entropy_bits>=40: s+=10
+        elif entropy_bits>=25: s+=5
+        for p,v in {"common_password":40,"repeated_characters":10,"sequential_numbers":8,
+            "sequential_letters":8,"keyboard_walk":10,"numbers_only":15}.items():
+            if p in detected_patterns: s-=v
+        return max(0,min(100,s))
+
     """Entropy analysis, pattern detection, Argon2id hashing"""
 
     COMMON_PASSWORDS = {
