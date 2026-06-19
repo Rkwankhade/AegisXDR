@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: aegisxdr-backend
+    env: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: APP_ENV
+        value: production
+      - key: DEBUG
+        value: "false"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_ALGORITHM
+        value: HS256
+      - key: JWT_EXPIRE_MINUTES
+        value: "60"
+      - key: DATABASE_URL
+        value: sqlite:///./aegisxdr.db
+      - key: ALLOWED_ORIGINS
+        value: http://localhost:3000
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD
+        generateValue: true
+      - key: VAULT_MASTER_PASSWORD
+        generateValue: true
+      - key: MALWARE_VAULT_KEY
+        generateValue: true
